@@ -29,7 +29,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/assets/css/main.css'],
+  colorMode: {
+    preference: 'dark', // default value of $colorMode.preference
+    fallback: 'dark', // fallback value if not system preference found
+  },
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -48,6 +52,7 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode',
   ],
   /*
    ** Nuxt.js modules
