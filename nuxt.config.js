@@ -31,7 +31,7 @@ export default {
    */
   css: ['@/assets/css/main.css'],
   colorMode: {
-    preference: 'dark', // default value of $colorMode.preference
+    preference: 'system', // default value of $colorMode.preference
     fallback: 'dark', // fallback value if not system preference found
   },
   /*
@@ -53,6 +53,7 @@ export default {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
+    '@nuxtjs/google-fonts',
   ],
   /*
    ** Nuxt.js modules
@@ -79,4 +80,9 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {},
+  googleFonts: {
+    families: {
+      Inter: true,
+    },
+  },
 }
