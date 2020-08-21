@@ -1,5 +1,6 @@
 <template>
-  <div class="container mt-4">
+  <div class="p-4">
     <AppBar />
+    <nuxt />
   </div>
 </template>

@@ -1,12 +1,16 @@
 <template>
-  <h1>Usted esta aqui</h1>
+  <article class="mx-auto prose-sm prose sm:prose lg:prose-lg xl:prose-lg">
+    <h1>{{ page.title }}</h1>
+    <nuxt-content :document="page"></nuxt-content>
+  </article>
 </template>
 
 <script>
 export default {
-  data() {
+  async asyncData({ $content }) {
+    const page = await $content('hello').fetch()
     return {
-      colors: ['system', 'light', 'dark', 'sepia'],
+      page,
     }
   },
 }
