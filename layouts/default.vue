@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <h1 class="text-4xl">Hola</h1>
-    <b>hola</b>
+  <div class="container mt-4">
+    <AppBar />
   </div>
 </template>
