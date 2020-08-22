@@ -35,6 +35,7 @@ export default {
       </ul>
     </nav>
     <nuxt-content :document="article" />
+    <author :author="article.author" />
   </article>
 </template>
 
@@ -62,5 +63,12 @@ h1 {
   width: 20px;
   height: 20px;
   background-size: 20px 20px;
+}
+
+.nuxt-content-highlight {
+  @apply relative;
+}
+.nuxt-content-highlight .filename {
+  @apply absolute right-0 text-gray-600 font-light z-10 mr-2 mt-1 text-sm;
 }
 </style>
