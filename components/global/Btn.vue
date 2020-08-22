@@ -15,7 +15,7 @@ export default {}
 
 .btn-outlined {
   @apply bg-transparent border;
-  &: hover {
+  &:hover {
     @apply border-transparent;
   }
 }
@@ -33,10 +33,10 @@ export default {}
 
 @variants focus, hover {
   .rotate-0 {
-    transform: rotate(0 deg);
+    transform: rotate(0deg);
   }
   .rotate-90 {
-    transform: rotate(90 deg);
+    transform: rotate(90deg);
   }
 }
 </style>
