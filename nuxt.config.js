@@ -30,10 +30,7 @@ export default {
    ** Global CSS
    */
   css: ['@/assets/css/main.css'],
-  colorMode: {
-    preference: 'system', // default value of $colorMode.preference
-    fallback: 'dark', // fallback value if not system preference found
-  },
+
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
