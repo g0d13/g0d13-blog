@@ -24,6 +24,7 @@
         fill="currentColor"
       ></path>
     </svg>
+    {{ $colorMode.value }}
   </div>
 </template>
 
@@ -34,7 +35,7 @@ export default {
     isDark: false,
   }),
   mounted() {
-    this.isDark = this.$colorMode.value === 'light'
+    this.isDark = this.$colorMode.value !== 'light'
   },
   methods: {
     toggleTheme() {
