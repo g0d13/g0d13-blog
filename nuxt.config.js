@@ -67,6 +67,19 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  colorMode: {
+    preference: 'system', // default value of $colorMode.preference
+    fallback: 'light', // fallback value if not system preference found
+    hid: 'nuxt-color-mode-script',
+    globalName: '__NUXT_COLOR_MODE__',
+    componentName: 'ColorScheme',
+    cookie: {
+      key: 'nuxt-color-mode',
+      options: {
+        sameSite: 'lax', // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite
+      },
+    },
+  },
   /*
    ** Content module configuration
    ** See https://content.nuxtjs.org/configuration

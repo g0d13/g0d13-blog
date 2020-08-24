@@ -34,7 +34,8 @@ export default {
     isDark: false,
   }),
   mounted() {
-    this.isDark = this.$colorMode.value !== 'light'
+    this.isDark = this.$colorMode.value !== 'dark'
+    console.dir(this.$colorMode.value === 'light')
   },
   methods: {
     toggleTheme() {

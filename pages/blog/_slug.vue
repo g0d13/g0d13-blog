@@ -50,19 +50,30 @@ export default {
 </template>
 
 <style>
-/* .icon.icon-link {
-  background: url('~assets/svg/icon-hashtag.svg');
+.icon.icon-link {
+  background: var(--background);
   display: inline-block;
+  margin-left: -20px;
   width: 20px;
   height: 20px;
   background-size: 20px 20px;
   fill: var(--color) !important;
 }
-.icon.icon-link > svg > path {
-  /*target the image with css
-  fill: var(--color);
-} */
+.prose h3 > a {
+  visibility: hidden;
+}
 
+.prose h3:hover > a {
+  visibility: visible;
+}
+
+.prose > h1:hover > a,
+.prose > h2:hover > a,
+.prose > h3:hover > a,
+.prose h4:hover > a,
+.prose dt.hdlist1:hover > a.anchor {
+  visibility: visible !important;
+}
 .nuxt-content-highlight {
   @apply relative;
 }
