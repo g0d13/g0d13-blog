@@ -35,7 +35,6 @@ export default {
   }),
   mounted() {
     this.isDark = this.$colorMode.value !== 'dark'
-    console.dir(this.$colorMode.value === 'light')
   },
   methods: {
     toggleTheme() {
