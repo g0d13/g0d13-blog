@@ -10,59 +10,70 @@ export default {
   methods: {
     formatDate(date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
-      return new Date(date).toLocaleDateString('en', options)
+      return new Date(date).toLocaleDateString('es', options)
     },
   },
 }
 </script>
 
 <template>
-  <article>
-    <h1>{{ article.title }}</h1>
-    <p>{{ article.description }}</p>
-    <img :src="article.img" :alt="article.alt" />
-    <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
-    <nav>
-      <ul>
-        <li v-for="link of article.toc" :key="link.id">
-          <NuxtLink
-            :to="`#${link.id}`"
-            :class="{ 'py-2': link.depth === 2, 'ml-2 pb-2': link.depth === 3 }"
-          >
-            {{ link.text }}
-          </NuxtLink>
-        </li>
-      </ul>
-    </nav>
+  <article class="container mx-auto max-w-screen-sm">
+    <h1 class="text-5xl font-bold">{{ article.title }}</h1>
+    <p class="mb-2">{{ article.description }}</p>
+    <img
+      :src="article.img"
+      :alt="article.alt"
+      class="w-full h-64 object-cover"
+    />
+    <p class="text-right mb-6">{{ formatDate(article.updatedAt) }}</p>
+    <ul class="my-4">
+      <li v-for="link of article.toc" :key="link.id" class="text-right">
+        <NuxtLink
+          :to="`#${link.id}`"
+          :class="{
+            'py-4': link.depth === 2,
+            'mr-4 pb-4 bg-red': link.depth >= 3,
+          }"
+        >
+          {{ link.text }}
+        </NuxtLink>
+      </li>
+    </ul>
     <nuxt-content :document="article" />
-    <author :author="article.author" />
   </article>
 </template>
 
 <style>
-.nuxt-content h1,
-h1 {
-  font-weight: bold;
-  font-size: 36px;
+.nuxt-content > h1,
+h2,
+h3 {
+  @apply font-bold mb-3;
+}
+
+.nuxt-content h1 {
+  @apply text-3xl;
 }
 .nuxt-content h2 {
-  font-weight: bold;
-  font-size: 28px;
+  @apply text-2xl;
 }
 .nuxt-content h3 {
-  font-weight: bold;
-  font-size: 22px;
+  @apply text-xl;
 }
 .nuxt-content p {
   margin-bottom: 20px;
 }
 
 .icon.icon-link {
-  background-image: url('~assets/svg/icon-hashtag.svg');
+  background: url('~assets/svg/icon-hashtag.svg');
   display: inline-block;
   width: 20px;
   height: 20px;
   background-size: 20px 20px;
+  fill: var(--color) !important;
+}
+.icon.icon-link > svg > path {
+  /*target the image with css*/
+  fill: var(--color);
 }
 
 .nuxt-content-highlight {

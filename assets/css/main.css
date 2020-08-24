@@ -28,3 +28,9 @@ body {
   color: var(--color);
   transition: background-color 0.3s;
 }
+[isEditing] {
+  color: var(--color) !important;
+}
+textarea {
+  color: #243746 !important
+}

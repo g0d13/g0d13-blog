@@ -1,17 +1,11 @@
 <template>
-  <nav class="flex flex-row items-center justify-end gap-6">
-    <ul>
-      <Theme></Theme>
-    </ul>
-    <ul>
-      Blog
-    </ul>
-    <ul>
-      Recursos
-    </ul>
-    <ul>
-      <btn class="btn btn-outlined">Comencemos</btn>
-    </ul>
+  <nav class="flex flex-row justify-between mb-4">
+    <nuxt-link to="/" class="font-bold"> .[ }. </nuxt-link>
+    <span class="flex flex-row gap-6">
+      <theme />
+      <nuxt-link to="/">Blog</nuxt-link>
+      <nuxt-link to="/">Recursos</nuxt-link>
+    </span>
   </nav>
 </template>
 
