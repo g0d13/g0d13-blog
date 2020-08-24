@@ -28,28 +28,20 @@ export default {
     />
 
     <p class="mt-0 text-right">{{ formatDate(article.updatedAt) }}</p>
-
-    <ul class="my-4">
-      <div v-if="article.toc !== 0">
-        <h2>Tabla de contenidos</h2>
-        <li v-for="link of article.toc" :key="link.id">
-          <NuxtLink
-            :to="`#${link.id}`"
-            :class="{
-              'py-4': link.depth === 2,
-              'mr-4 pb-4 bg-red': link.depth >= 3,
-            }"
-          >
-            {{ link.text }}
-          </NuxtLink>
-        </li>
-      </div>
-    </ul>
+    <toc :toc="article.toc" />
     <nuxt-content :document="article" />
   </article>
 </template>
 
 <style>
+/* text color */
+.prose > h1,
+h2,
+h3,
+p,
+a {
+  color: var(--color) !important;
+}
 .icon.icon-link {
   background: var(--background);
   display: inline-block;
@@ -57,13 +49,14 @@ export default {
   width: 20px;
   height: 20px;
   background-size: 20px 20px;
-  fill: var(--color) !important;
 }
-.prose h3 > a {
+.prose h3 > a,
+h2 > a {
   visibility: hidden;
 }
 
-.prose h3:hover > a {
+.prose h2:hover > a,
+h3:hover > a {
   visibility: visible;
 }
 
@@ -79,13 +72,5 @@ export default {
 }
 .nuxt-content-highlight .filename {
   @apply absolute right-0 text-gray-600 font-light z-10 mr-2 mt-1 text-sm;
-}
-
-.prose > h1,
-h2,
-h3,
-p,
-a {
-  color: var(--color) !important;
 }
 </style>

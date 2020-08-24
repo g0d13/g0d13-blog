@@ -13,6 +13,6 @@ author:
 
 ### :not(x)
 
-### 
+### :lang(x)
 
 ## Playground
