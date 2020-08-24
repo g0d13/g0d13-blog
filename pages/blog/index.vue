@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto max-w-screen-sm">
+  <div class="max-w-screen-sm mx-auto">
     <h1 class="text-4xl font-bold">Blog</h1>
     <ul class="mt-3">
       <li v-for="article in articles" :key="article.slug">
@@ -7,10 +7,10 @@
           :to="{ name: 'blog-slug', params: { slug: article.slug } }"
           class="flex my-8"
         >
-          <img :src="article.img" alt="Una imagen" class="h-32 w-32" />
-          <div class="pl-5 flex flex-col">
-            <h2 class="font-bold text-xl">{{ article.title }}</h2>
-            <p class="italic text-sm">{{ article.author.name }}</p>
+          <img :src="article.img" alt="Una imagen" class="w-32 h-32" />
+          <div class="flex flex-col pl-5">
+            <h2 class="text-xl font-bold">{{ article.title }}</h2>
+            <p class="text-sm italic">{{ article.author.name }}</p>
             <p class="text-justify">{{ article.description }}</p>
           </div>
         </NuxtLink>

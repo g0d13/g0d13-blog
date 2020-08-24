@@ -24,7 +24,6 @@
         fill="currentColor"
       ></path>
     </svg>
-    {{ $colorMode.value }}
   </div>
 </template>
 
