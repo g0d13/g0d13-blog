@@ -1,5 +1,6 @@
 {
-  "name": "g0d13-blog",
+  "name": "g0d13",
+  "description": "Blog personal enfocado a aprender",
   "version": "1.0.0",
   "private": true,
   "scripts": {
