@@ -5,10 +5,12 @@
       <p v-if="link.depth === 2">
         <span class="mr-3 bullet">&#8226;</span>
         <span>{{ link.text }}</span>
+        {{ link.depth }}
       </p>
       <p v-else class="sublink">
         <span class="mr-2 bullet">&#8226;</span>
         <span>{{ link.text }}</span>
+        {{ link.depth }}
       </p>
     </NuxtLink>
   </div>

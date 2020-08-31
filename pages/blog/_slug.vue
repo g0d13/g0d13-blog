@@ -50,8 +50,8 @@ a {
   height: 20px;
   background-size: 20px 20px;
 }
-.prose h3 > a,
-h2 > a {
+.prose h2 > a,
+h3 > a {
   visibility: hidden;
 }
 
